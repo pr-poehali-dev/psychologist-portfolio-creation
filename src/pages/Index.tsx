@@ -60,14 +60,15 @@ const Index = () => {
     },
     {
       title: 'Перформанс-терапия',
-      duration: 'Курс 8 занятий',
-      price: '20 000',
+      duration: '3 месяца, 24 занятия',
+      price: '9 500',
+      priceNote: '/ месяц',
       features: [
         'Театротерапия',
         'Танцевальная терапия',
         'Вокалотерапия',
         'Групповые занятия',
-        'Авторская методика'
+        'Выпускной перформанс'
       ],
       popular: true
     },
@@ -511,6 +512,7 @@ const Index = () => {
                   <div className="text-center mt-4">
                     <span className="text-4xl font-bold text-primary">{price.price}</span>
                     <span className="text-xl text-muted-foreground ml-1">₽</span>
+                    {price.priceNote && <span className="text-sm text-muted-foreground ml-1">{price.priceNote}</span>}
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -850,7 +852,7 @@ const Index = () => {
           <DialogHeader>
             <DialogTitle className="text-2xl">Перформанс-терапия</DialogTitle>
             <DialogDescription>
-              Авторский курс из 8 занятий, объединяющий театральные методы, танец и вокал
+              Трёхмесячный курс из 24 занятий с выпускным перформансом
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-4 py-4">
@@ -861,31 +863,35 @@ const Index = () => {
               </h3>
               <p className="text-muted-foreground">
                 Перформанс-терапия — это уникальная методика работы с эмоциональным состоянием через творческое самовыражение. 
-                Вы будете исследовать свои чувства, страхи и желания через театральные импровизации, движение и голос.
+                Курс объединяет театральные техники, танцевальную терапию и вокалотерапию для глубокой трансформации личности.
               </p>
             </div>
             
             <div>
               <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
                 <Icon name="List" className="text-primary" size={20} />
-                Программа курса (8 занятий)
+                Что входит в курс?
               </h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex gap-2">
                   <Icon name="Check" className="text-green-500 flex-shrink-0 mt-1" size={16} />
-                  <span><strong>Занятия 1-2:</strong> Театротерапия — работа с ролями и масками</span>
+                  <span><strong>24 занятия</strong> по 2,5 часа (2 раза в неделю)</span>
                 </li>
                 <li className="flex gap-2">
                   <Icon name="Check" className="text-green-500 flex-shrink-0 mt-1" size={16} />
-                  <span><strong>Занятия 3-4:</strong> Танцевальная терапия — освобождение тела</span>
+                  <span><strong>Театротерапия:</strong> работа с ролями, масками, сценками из жизни</span>
                 </li>
                 <li className="flex gap-2">
                   <Icon name="Check" className="text-green-500 flex-shrink-0 mt-1" size={16} />
-                  <span><strong>Занятия 5-6:</strong> Вокалотерапия — работа с голосом и эмоциями</span>
+                  <span><strong>Танцевальная терапия:</strong> освобождение тела и эмоций через движение</span>
                 </li>
                 <li className="flex gap-2">
                   <Icon name="Check" className="text-green-500 flex-shrink-0 mt-1" size={16} />
-                  <span><strong>Занятия 7-8:</strong> Интеграция — создание собственного перформанса</span>
+                  <span><strong>Вокалотерапия:</strong> работа с голосом, дыханием и внутренними блоками</span>
+                </li>
+                <li className="flex gap-2">
+                  <Icon name="Check" className="text-green-500 flex-shrink-0 mt-1" size={16} />
+                  <span><strong>Выпускной перформанс:</strong> создание собственного творческого проекта</span>
                 </li>
               </ul>
             </div>
@@ -893,29 +899,60 @@ const Index = () => {
             <div>
               <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
                 <Icon name="Heart" className="text-primary" size={20} />
-                Для кого?
+                Результаты курса
               </h3>
-              <p className="text-muted-foreground">
-                Курс подходит для всех, кто хочет лучше понять себя, преодолеть стеснение, развить творческий потенциал 
-                или просто найти новый способ работы с эмоциями. Не требуется специальной подготовки.
-              </p>
+              <ul className="space-y-2 text-muted-foreground">
+                <li className="flex gap-2">
+                  <Icon name="Sparkles" className="text-primary flex-shrink-0 mt-1" size={16} />
+                  <span>Преодоление стеснения и страха публичных выступлений</span>
+                </li>
+                <li className="flex gap-2">
+                  <Icon name="Sparkles" className="text-primary flex-shrink-0 mt-1" size={16} />
+                  <span>Развитие уверенности в себе и самовыражения</span>
+                </li>
+                <li className="flex gap-2">
+                  <Icon name="Sparkles" className="text-primary flex-shrink-0 mt-1" size={16} />
+                  <span>Освобождение от эмоциональных блоков и зажимов</span>
+                </li>
+                <li className="flex gap-2">
+                  <Icon name="Sparkles" className="text-primary flex-shrink-0 mt-1" size={16} />
+                  <span>Раскрытие творческого потенциала</span>
+                </li>
+              </ul>
             </div>
 
             <div>
               <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
                 <Icon name="Clock" className="text-primary" size={20} />
-                Формат
+                Формат и условия
               </h3>
-              <p className="text-muted-foreground">
-                <strong>Групповые занятия</strong> по 2 часа, 1 раз в неделю. Группа до 10 человек. 
-                Проходят в уютной студии с профессиональным оборудованием.
-              </p>
+              <ul className="space-y-2 text-muted-foreground">
+                <li className="flex gap-2">
+                  <Icon name="Users" className="text-primary flex-shrink-0 mt-1" size={16} />
+                  <span><strong>Групповые занятия:</strong> до 12 человек</span>
+                </li>
+                <li className="flex gap-2">
+                  <Icon name="Calendar" className="text-primary flex-shrink-0 mt-1" size={16} />
+                  <span><strong>График:</strong> 2 раза в неделю по 2,5 часа</span>
+                </li>
+                <li className="flex gap-2">
+                  <Icon name="Clock" className="text-primary flex-shrink-0 mt-1" size={16} />
+                  <span><strong>Длительность:</strong> 3 месяца (24 занятия)</span>
+                </li>
+                <li className="flex gap-2">
+                  <Icon name="MapPin" className="text-primary flex-shrink-0 mt-1" size={16} />
+                  <span><strong>Место:</strong> уютная студия с профессиональным оборудованием</span>
+                </li>
+              </ul>
             </div>
 
             <div className="bg-primary/5 p-4 rounded-lg">
-              <p className="font-semibold mb-2">💰 Стоимость полного курса: 20 000 ₽</p>
+              <p className="font-semibold mb-2">💰 Стоимость: 9 500 ₽ / месяц</p>
+              <p className="text-sm text-muted-foreground mb-2">
+                Полная стоимость курса: 28 500 ₽ за 3 месяца (24 занятия + выпускной перформанс)
+              </p>
               <p className="text-sm text-muted-foreground">
-                Можно оплатить двумя частями: 10 000 ₽ перед началом и 10 000 ₽ после 4-го занятия
+                Оплата помесячно — удобно и доступно!
               </p>
             </div>
 
