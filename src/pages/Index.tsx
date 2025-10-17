@@ -251,7 +251,7 @@ const Index = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Телефон</h3>
-                  <p className="text-muted-foreground">+7 (999) 123-45-67</p>
+                  <p className="text-muted-foreground">+7 918 311 17 12</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -269,7 +269,7 @@ const Index = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Адрес</h3>
-                  <p className="text-muted-foreground">Москва, ул. Примерная, д. 10</p>
+                  <p className="text-muted-foreground">г. Краснодар, ул. Горького, 104, офис 26</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -326,11 +326,35 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="py-8 px-4 bg-primary text-primary-foreground">
-        <div className="container mx-auto text-center">
-          <p className="mb-2 font-semibold">Светлана Алексеевна Кузикова</p>
-          <p className="text-sm opacity-90">Психолог. Помогаю обрести гармонию и счастье</p>
-          <p className="text-sm opacity-75 mt-4">© 2024 Все права защищены</p>
+      <footer className="py-12 px-4 bg-primary text-primary-foreground">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <p className="mb-3 font-semibold text-lg">ИП Кузикова Светлана Алексеевна</p>
+              <div className="space-y-2 text-sm opacity-90">
+                <p>ОГРНИП: 318237500160591</p>
+                <p>Адрес: г. Краснодар, ул. Горького, 104, офис 26</p>
+                <p>Телефон: +7 918 311 17 12</p>
+              </div>
+            </div>
+            <div>
+              <p className="mb-3 font-semibold text-lg">Правовая информация</p>
+              <div className="space-y-2 text-sm opacity-90">
+                <a href="https://disk.yandex.ru/i/uYn3_o7baO2GSw" target="_blank" rel="noopener noreferrer" className="block hover:opacity-100 transition-opacity underline">
+                  Политика конфиденциальности
+                </a>
+                <a href="https://disk.yandex.ru/i/-bYRWaWj_7bgCg" target="_blank" rel="noopener noreferrer" className="block hover:opacity-100 transition-opacity underline">
+                  Публичная оферта
+                </a>
+                <a href="https://disk.yandex.ru/i/OaR47K7F_Z_l_A" target="_blank" rel="noopener noreferrer" className="block hover:opacity-100 transition-opacity underline">
+                  Согласие на обработку персональных данных
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="text-center pt-6 border-t border-primary-foreground/20">
+            <p className="text-sm opacity-75">© 2024 Все права защищены</p>
+          </div>
         </div>
       </footer>
     </div>
