@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Checkbox } from "@/components/ui/checkbox";
 import Icon from '@/components/ui/icon';
 
@@ -16,6 +17,7 @@ const Index = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
   const [visitorCount, setVisitorCount] = useState<number | null>(null);
+  const [performanceDialogOpen, setPerformanceDialogOpen] = useState(false);
 
   useEffect(() => {
     const trackVisitor = async () => {
@@ -531,7 +533,7 @@ const Index = () => {
                       <Button 
                         className="w-full" 
                         variant="outline"
-                        onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                        onClick={() => setPerformanceDialogOpen(true)}
                       >
                         Подробнее
                       </Button>
@@ -842,6 +844,104 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      <Dialog open={performanceDialogOpen} onOpenChange={setPerformanceDialogOpen}>
+        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl">Перформанс-терапия</DialogTitle>
+            <DialogDescription>
+              Авторский курс из 8 занятий, объединяющий театральные методы, танец и вокал
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-4 py-4">
+            <div>
+              <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
+                <Icon name="Target" className="text-primary" size={20} />
+                Что это такое?
+              </h3>
+              <p className="text-muted-foreground">
+                Перформанс-терапия — это уникальная методика работы с эмоциональным состоянием через творческое самовыражение. 
+                Вы будете исследовать свои чувства, страхи и желания через театральные импровизации, движение и голос.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
+                <Icon name="List" className="text-primary" size={20} />
+                Программа курса (8 занятий)
+              </h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li className="flex gap-2">
+                  <Icon name="Check" className="text-green-500 flex-shrink-0 mt-1" size={16} />
+                  <span><strong>Занятия 1-2:</strong> Театротерапия — работа с ролями и масками</span>
+                </li>
+                <li className="flex gap-2">
+                  <Icon name="Check" className="text-green-500 flex-shrink-0 mt-1" size={16} />
+                  <span><strong>Занятия 3-4:</strong> Танцевальная терапия — освобождение тела</span>
+                </li>
+                <li className="flex gap-2">
+                  <Icon name="Check" className="text-green-500 flex-shrink-0 mt-1" size={16} />
+                  <span><strong>Занятия 5-6:</strong> Вокалотерапия — работа с голосом и эмоциями</span>
+                </li>
+                <li className="flex gap-2">
+                  <Icon name="Check" className="text-green-500 flex-shrink-0 mt-1" size={16} />
+                  <span><strong>Занятия 7-8:</strong> Интеграция — создание собственного перформанса</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
+                <Icon name="Heart" className="text-primary" size={20} />
+                Для кого?
+              </h3>
+              <p className="text-muted-foreground">
+                Курс подходит для всех, кто хочет лучше понять себя, преодолеть стеснение, развить творческий потенциал 
+                или просто найти новый способ работы с эмоциями. Не требуется специальной подготовки.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
+                <Icon name="Clock" className="text-primary" size={20} />
+                Формат
+              </h3>
+              <p className="text-muted-foreground">
+                <strong>Групповые занятия</strong> по 2 часа, 1 раз в неделю. Группа до 10 человек. 
+                Проходят в уютной студии с профессиональным оборудованием.
+              </p>
+            </div>
+
+            <div className="bg-primary/5 p-4 rounded-lg">
+              <p className="font-semibold mb-2">💰 Стоимость полного курса: 20 000 ₽</p>
+              <p className="text-sm text-muted-foreground">
+                Можно оплатить двумя частями: 10 000 ₽ перед началом и 10 000 ₽ после 4-го занятия
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-3 pt-4">
+              <Button 
+                className="w-full"
+                onClick={() => {
+                  setPerformanceDialogOpen(false);
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                <Icon name="Calendar" className="mr-2" size={18} />
+                Записаться на курс
+              </Button>
+              <Button 
+                variant="outline"
+                className="w-full"
+                onClick={() => window.open('https://orator.turbo.site/theatre', '_blank')}
+              >
+                <Icon name="ExternalLink" className="mr-2" size={18} />
+                Подробнее на сайте
+              </Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       {/* Floating WhatsApp Button */}
       <a
