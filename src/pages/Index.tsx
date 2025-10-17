@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -544,10 +545,14 @@ const Index = () => {
                       htmlFor="privacy-policy" 
                       className="text-sm text-muted-foreground leading-relaxed cursor-pointer"
                     >
-                      Я согласен(на) на обработку персональных данных и с{' '}
-                      <a href="#" className="text-primary underline hover:text-primary/80">
+                      Я согласен(на) на{' '}
+                      <Link to="/consent" className="text-primary underline hover:text-primary/80" target="_blank">
+                        обработку персональных данных
+                      </Link>
+                      {' '}и с{' '}
+                      <Link to="/privacy" className="text-primary underline hover:text-primary/80" target="_blank">
                         политикой конфиденциальности
-                      </a>
+                      </Link>
                     </label>
                   </div>
                   <Button type="submit" className="w-full" size="lg" disabled={!agreedToPolicy}>
