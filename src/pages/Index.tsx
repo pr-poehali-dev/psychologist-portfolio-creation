@@ -13,7 +13,6 @@ const Index = () => {
 
   const menuItems = [
     { href: '#about', label: 'Обо мне' },
-    { href: '#unique', label: 'Моя уникальность' },
     { href: '#services', label: 'Услуги' },
     { href: '#methods', label: 'Методы' },
     { href: '#testimonials', label: 'Отзывы' },
@@ -258,6 +257,30 @@ const Index = () => {
                 </div>
 
                 <Accordion type="single" collapsible className="mt-6">
+                  <AccordionItem value="unique">
+                    <AccordionTrigger className="text-lg font-semibold">
+                      🌟 Моя уникальность
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <div className="space-y-4">
+                        <div className="bg-primary/5 p-4 rounded-lg">
+                          <p className="text-base font-semibold mb-3">Соединяю психологию и арт-терапию (исцеление творчеством)</p>
+                          <p className="text-sm text-muted-foreground">Работа через живопись, танец, театр, вокал и песочную терапию для глубинных изменений</p>
+                        </div>
+                        
+                        <div className="border-l-4 border-primary pl-4">
+                          <p className="font-semibold mb-2">Авторский курс "Перформанс-терапия"</p>
+                          <p className="text-sm text-muted-foreground mb-3">Уникальная програма, которая через театротерапию, танцевально-двигательную терапию и вокал помогает преодолеть неуверенность, страхи и комплексы</p>
+                          <div className="flex flex-wrap gap-2">
+                            <span className="px-3 py-1 bg-white border rounded-full text-xs">Преодоление страхов</span>
+                            <span className="px-3 py-1 bg-white border rounded-full text-xs">Уверенность</span>
+                            <span className="px-3 py-1 bg-white border rounded-full text-xs">Освобождение от комплексов</span>
+                          </div>
+                        </div>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+
                   <AccordionItem value="education">
                     <AccordionTrigger className="text-lg font-semibold">
                       Дополнительное образование
@@ -301,90 +324,6 @@ const Index = () => {
               </CardContent>
             </Card>
           </div>
-        </div>
-      </section>
-
-      <section id="unique" className="py-20 px-4 bg-gradient-to-br from-primary/5 via-secondary/10 to-background">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Моя уникальность</h2>
-            <p className="text-xl text-muted-foreground">Соединяю психологию и искусство для глубокого исцеления</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <Card className="animate-fade-in border-2 border-primary/20">
-              <CardHeader>
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto">
-                  <Icon name="Award" className="text-primary" size={32} />
-                </div>
-                <CardTitle className="text-2xl text-center">Дипломированный специалист</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center space-y-3">
-                <p className="text-lg"><strong>15 лет</strong> профессиональной психологической практики</p>
-                <p className="text-base">Сертифицированный гештальт-терапевт</p>
-                <p className="text-base">Член Российской арт-терапевтической ассоциации (РААТ)</p>
-              </CardContent>
-            </Card>
-
-            <Card className="animate-fade-in border-2 border-primary/20">
-              <CardHeader>
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto">
-                  <Icon name="Sparkles" className="text-primary" size={32} />
-                </div>
-                <CardTitle className="text-2xl text-center">Исцеление творчеством</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center space-y-3">
-                <p className="text-lg">Уникальное соединение <strong>психологии и арт-терапии</strong></p>
-                <p className="text-base">Работа через живопись, танец, театр, вокал и песочную терапию</p>
-                <p className="text-base">Творческие методы для глубинных изменений</p>
-              </CardContent>
-            </Card>
-          </div>
-
-          <Card className="animate-scale-in bg-gradient-to-r from-primary/5 to-secondary/5 border-2 border-primary">
-            <CardHeader className="text-center">
-              <div className="inline-block px-4 py-2 bg-primary text-primary-foreground rounded-full text-sm font-bold mb-4">
-                АВТОРСКИЙ КУРС
-              </div>
-              <CardTitle className="text-3xl mb-3">Перформанс-терапия</CardTitle>
-              <CardDescription className="text-lg">Моя гордость — уникальная программа исцеления</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <p className="text-center text-lg leading-relaxed">
-                Авторский курс, который через <strong>театротерапию, танцевально-двигательную терапию и вокал</strong> помогает преодолеть неуверенность, страхи и комплексы
-              </p>
-              
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center p-4 bg-white rounded-lg">
-                  <Icon name="Theater" className="text-primary mx-auto mb-3" size={40} />
-                  <h4 className="font-semibold mb-2">Театротерапия</h4>
-                  <p className="text-sm text-muted-foreground">Освобождение через роль и игру</p>
-                </div>
-                <div className="text-center p-4 bg-white rounded-lg">
-                  <Icon name="Music" className="text-primary mx-auto mb-3" size={40} />
-                  <h4 className="font-semibold mb-2">Танцевальная терапия</h4>
-                  <p className="text-sm text-muted-foreground">Исцеление через движение тела</p>
-                </div>
-                <div className="text-center p-4 bg-white rounded-lg">
-                  <Icon name="Mic" className="text-primary mx-auto mb-3" size={40} />
-                  <h4 className="font-semibold mb-2">Вокалотерапия</h4>
-                  <p className="text-sm text-muted-foreground">Сила голоса для трансформации</p>
-                </div>
-              </div>
-
-              <div className="bg-primary/10 p-6 rounded-lg text-center">
-                <p className="text-lg font-semibold mb-2">Результаты курса:</p>
-                <div className="flex flex-wrap justify-center gap-3 mt-4">
-                  <span className="px-4 py-2 bg-white rounded-full text-sm">Преодоление страхов</span>
-                  <span className="px-4 py-2 bg-white rounded-full text-sm">Уверенность в себе</span>
-                  <span className="px-4 py-2 bg-white rounded-full text-sm">Освобождение от комплексов</span>
-                  <span className="px-4 py-2 bg-white rounded-full text-sm">Раскрытие творческого потенциала</span>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-
         </div>
       </section>
 
