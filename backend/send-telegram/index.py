@@ -6,7 +6,7 @@ from typing import Dict, Any
 
 def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     '''
-    Business: Send contact form submissions to Telegram
+    Business: Send contact form submissions to Telegram bot
     Args: event with httpMethod, body containing name, phone, email, message
           context with request_id
     Returns: HTTP response with success/error status
