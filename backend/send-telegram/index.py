@@ -13,7 +13,6 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     '''
     method: str = event.get('httpMethod', 'POST')
     
-    # Handle CORS OPTIONS request
     if method == 'OPTIONS':
         return {
             'statusCode': 200,
@@ -36,16 +35,14 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
             'body': json.dumps({'error': 'Method not allowed'})
         }
     
-    # Parse request body
     body_data = json.loads(event.get('body', '{}'))
     name = body_data.get('name', '')
     phone = body_data.get('phone', '')
     email = body_data.get('email', '')
     message = body_data.get('message', '')
     
-    # Get credentials from environment
-    bot_token = os.environ.get('TELEGRAM_BOT_TOKEN')
-    chat_id = os.environ.get('TELEGRAM_CHAT_ID')
+    bot_token = os.environ.get('TG_BOT_TOKEN', '').strip()
+    chat_id = os.environ.get('TG_CHAT_ID', '').strip()
     
     if not bot_token or not chat_id:
         return {
@@ -54,35 +51,22 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
                 'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json'
             },
-            'body': json.dumps({'error': 'Telegram configuration missing'})
+            'body': json.dumps({'error': f'Config missing - token: {bool(bot_token)}, chat: {bool(chat_id)}'})
         }
     
-    # Create Telegram message
-    telegram_message = f'''🔔 <b>Новая заявка с сайта</b>
+    telegram_message = f'''🔔 Новая заявка с сайта
 
-👤 <b>Имя:</b> {name}
-📱 <b>Телефон:</b> {phone}
-✉️ <b>Email:</b> {email}
+👤 Имя: {name}
+📱 Телефон: {phone}
+✉️ Email: {email}
 
-💬 <b>Сообщение:</b>
+💬 Сообщение:
 {message}'''
     
-    # Send message to Telegram
-    telegram_url = f'https://api.telegram.org/bot{bot_token}/sendMessage'
-    
-    data = {
-        'chat_id': chat_id,
-        'text': telegram_message,
-        'parse_mode': 'HTML'
-    }
+    url = f'https://api.telegram.org/bot{bot_token}/sendMessage?chat_id={chat_id}&text={urllib.parse.quote(telegram_message)}'
     
     try:
-        req = urllib.request.Request(
-            telegram_url,
-            data=json.dumps(data).encode('utf-8'),
-            headers={'Content-Type': 'application/json'}
-        )
-        
+        req = urllib.request.Request(url)
         with urllib.request.urlopen(req, timeout=10) as response:
             result = json.loads(response.read().decode('utf-8'))
             
@@ -94,7 +78,7 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
                         'Content-Type': 'application/json'
                     },
                     'isBase64Encoded': False,
-                    'body': json.dumps({'success': True, 'message': 'Message sent to Telegram'})
+                    'body': json.dumps({'success': True, 'message': 'Sent to Telegram'})
                 }
             else:
                 return {
@@ -104,8 +88,19 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
                         'Content-Type': 'application/json'
                     },
                     'isBase64Encoded': False,
-                    'body': json.dumps({'error': 'Telegram API error'})
+                    'body': json.dumps({'error': f'Telegram error: {result}'})
                 }
+    except urllib.error.HTTPError as e:
+        error_body = e.read().decode('utf-8')
+        return {
+            'statusCode': 500,
+            'headers': {
+                'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'application/json'
+            },
+            'isBase64Encoded': False,
+            'body': json.dumps({'error': f'HTTP {e.code}: {error_body}'})
+        }
     except Exception as e:
         return {
             'statusCode': 500,
@@ -114,5 +109,5 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
                 'Content-Type': 'application/json'
             },
             'isBase64Encoded': False,
-            'body': json.dumps({'error': f'Failed to send message: {str(e)}'})
+            'body': json.dumps({'error': f'Error: {str(e)}, token_len: {len(bot_token)}, chat_id: {chat_id}'})
         }
