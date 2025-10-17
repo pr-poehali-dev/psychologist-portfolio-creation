@@ -4,10 +4,21 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const menuItems = [
+    { href: '#about', label: 'Обо мне' },
+    { href: '#services', label: 'Услуги' },
+    { href: '#methods', label: 'Методы' },
+    { href: '#testimonials', label: 'Отзывы' },
+    { href: '#articles', label: 'Статьи' },
+    { href: '#contact', label: 'Контакты' }
+  ];
 
   const services = [
     {
@@ -63,16 +74,40 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-primary">Светлана Кузикова</h1>
           <nav className="hidden md:flex gap-6">
-            <a href="#about" className="hover:text-primary transition-colors">Обо мне</a>
-            <a href="#services" className="hover:text-primary transition-colors">Услуги</a>
-            <a href="#methods" className="hover:text-primary transition-colors">Методы</a>
-            <a href="#testimonials" className="hover:text-primary transition-colors">Отзывы</a>
-            <a href="#articles" className="hover:text-primary transition-colors">Статьи</a>
-            <a href="#contact" className="hover:text-primary transition-colors">Контакты</a>
+            {menuItems.map((item) => (
+              <a key={item.href} href={item.href} className="hover:text-primary transition-colors">
+                {item.label}
+              </a>
+            ))}
           </nav>
           <Button asChild className="hidden md:inline-flex">
             <a href="#contact">Записаться</a>
           </Button>
+          
+          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="md:hidden">
+                <Icon name="Menu" size={24} />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[280px] sm:w-[350px]">
+              <nav className="flex flex-col gap-6 mt-8">
+                {menuItems.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-lg font-medium hover:text-primary transition-colors py-2 border-b border-border"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+                <Button asChild className="mt-4">
+                  <a href="#contact" onClick={() => setMobileMenuOpen(false)}>Записаться на консультацию</a>
+                </Button>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </header>
 
