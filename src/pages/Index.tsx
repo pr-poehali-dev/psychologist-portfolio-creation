@@ -301,11 +301,22 @@ const Index = () => {
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl font-bold text-center mb-12">Обо мне</h2>
           <div className="space-y-8">
-            <Card className="animate-fade-in">
+            <Card className="animate-fade-in overflow-hidden">
               <CardContent className="pt-6 space-y-4">
-                <p className="text-lg leading-relaxed">
-                  Я — профессиональный психолог, руководитель Центра психологии и творчества <strong>Kuzikova school</strong>. Помогаю людям обретать внутреннюю гармонию и уверенность через психологические методы и творческое самовыражение.
-                </p>
+                <div className="grid md:grid-cols-2 gap-6 items-center mb-6">
+                  <div>
+                    <p className="text-lg leading-relaxed">
+                      Я — профессиональный психолог, руководитель Центра психологии и творчества <strong>Kuzikova school</strong>. Помогаю людям обретать внутреннюю гармонию и уверенность через психологические методы и творческое самовыражение.
+                    </p>
+                  </div>
+                  <div className="rounded-lg overflow-hidden shadow-lg">
+                    <img 
+                      src="https://cdn.poehali.dev/files/2f541b40-5ce3-42eb-86c1-babbbcac29d3.jpg" 
+                      alt="Светлана Кузикова за работой"
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                </div>
                 
                 <div className="pt-4">
                   <h3 className="font-semibold text-xl mb-3 text-primary">Ко мне Вы можете обратиться по вопросам:</h3>
