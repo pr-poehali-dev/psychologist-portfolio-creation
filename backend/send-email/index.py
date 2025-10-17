@@ -46,7 +46,7 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     
     # Get credentials from environment
     mail_user = os.environ.get('MAIL_USER')
-    mail_password = os.environ.get('MAIL_PASSWORD')
+    mail_password = os.environ.get('MAIL_APP_PASSWORD')
     
     if not mail_user or not mail_password:
         return {
