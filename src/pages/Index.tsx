@@ -289,8 +289,8 @@ const Index = () => {
           </div>
           <div className="animate-scale-in">
             <img 
-              src="https://cdn.poehali.dev/projects/0b645c37-3abc-4608-889b-baf1abf21130/files/4148b0c7-0a75-4fcb-899e-fe7af8c6abbe.jpg" 
-              alt="Кабинет психолога"
+              src="https://cdn.poehali.dev/files/ac1daf71-0885-4df8-91bd-191f8729abb2.JPG" 
+              alt="Светлана Кузикова"
               className="rounded-2xl shadow-2xl w-full h-auto object-cover"
             />
           </div>
