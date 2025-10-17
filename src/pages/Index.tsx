@@ -567,7 +567,7 @@ const Index = () => {
 
       <footer className="py-12 px-4 bg-primary text-primary-foreground">
         <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <p className="mb-3 font-semibold text-lg">ИП Кузикова Светлана Алексеевна</p>
               <div className="space-y-2 text-sm opacity-90">
@@ -588,6 +588,38 @@ const Index = () => {
                 <Link to="/consent" className="block hover:opacity-100 transition-opacity underline">
                   Согласие на обработку персональных данных
                 </Link>
+              </div>
+            </div>
+            <div>
+              <p className="mb-3 font-semibold text-lg">Мы в соцсетях</p>
+              <div className="flex gap-4">
+                <a 
+                  href="https://vk.com/svetlana_kuzikova" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                  aria-label="ВКонтакте"
+                >
+                  <Icon name="Share2" size={24} />
+                </a>
+                <a 
+                  href="https://t.me/kuzikova_school" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                  aria-label="Telegram"
+                >
+                  <Icon name="Send" size={24} />
+                </a>
+                <a 
+                  href="https://wa.me/message/FKFHPRMEDBRYP1" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                  aria-label="WhatsApp"
+                >
+                  <Icon name="MessageCircle" size={24} />
+                </a>
               </div>
             </div>
           </div>
