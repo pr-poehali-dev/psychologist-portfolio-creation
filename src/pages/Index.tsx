@@ -162,16 +162,8 @@ const Index = () => {
           <div className="space-y-8">
             <Card className="animate-fade-in">
               <CardContent className="pt-6 space-y-4">
-                <div className="bg-primary/5 p-6 rounded-lg mb-6">
-                  <p className="text-xl font-semibold text-center mb-3">
-                    Дипломированный психолог с <span className="text-primary text-2xl">15-летним опытом</span> работы
-                  </p>
-                  <p className="text-center text-base">
-                    Сертифицированный гештальт-терапевт • Член РААТ • Руководитель Kuzikova school
-                  </p>
-                </div>
                 <p className="text-lg leading-relaxed">
-                  Моя уникальность — я <strong>соединяю психологию и арт-терапию</strong> (исцеление творчеством). Более 15 лет помогаю людям обрести гармонию через традиционные психологические методы и творческое самовыражение.
+                  Я — профессиональный психолог, руководитель Центра психологии и творчества <strong>Kuzikova school</strong>. Помогаю людям обретать внутреннюю гармонию и уверенность через психологические методы и творческое самовыражение.
                 </p>
                 
                 <div className="pt-4">
@@ -208,20 +200,7 @@ const Index = () => {
                   Принимаю очно в г. Краснодар и онлайн. Приходите! Вместе найти выход проще...
                 </p>
 
-                <div className="grid md:grid-cols-3 gap-6 pt-6">
-                  <div className="text-center p-4 bg-primary/5 rounded-lg">
-                    <div className="text-5xl font-bold text-primary mb-2">15</div>
-                    <div className="text-muted-foreground font-medium">лет практики</div>
-                  </div>
-                  <div className="text-center p-4 bg-primary/5 rounded-lg">
-                    <div className="text-5xl font-bold text-primary mb-2">15000+</div>
-                    <div className="text-muted-foreground font-medium">часов обучения</div>
-                  </div>
-                  <div className="text-center p-4 bg-primary/5 rounded-lg">
-                    <Icon name="Award" className="text-primary mx-auto mb-2" size={40} />
-                    <div className="text-muted-foreground font-medium">Член РААТ</div>
-                  </div>
-                </div>
+
               </CardContent>
             </Card>
 
@@ -405,22 +384,7 @@ const Index = () => {
             </CardContent>
           </Card>
 
-          <div className="mt-12 text-center">
-            <Card className="inline-block animate-fade-in">
-              <CardContent className="pt-6">
-                <Icon name="GraduationCap" className="text-primary mx-auto mb-4" size={48} />
-                <h3 className="text-2xl font-bold mb-3">Преподаватель и супервизор</h3>
-                <p className="text-lg text-muted-foreground mb-4">
-                  Повышаю квалификацию психологов по арт-терапии.<br />
-                  Обучаю специалистов уникальным методам работы
-                </p>
-                <div className="flex justify-center gap-2">
-                  <Icon name="Check" className="text-primary" size={20} />
-                  <span className="text-base">Сертифицированные программы обучения</span>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+
         </div>
       </section>
 
