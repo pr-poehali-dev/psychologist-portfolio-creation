@@ -353,7 +353,7 @@ const Index = () => {
           <p className="text-center text-muted-foreground mb-12 text-lg">Основные направления моей работы</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, idx) => (
-              <Card key={idx} className={`hover:shadow-lg transition-shadow animate-scale-in hover:scale-105 transition-transform ${service.badge ? 'border-2 border-primary' : ''}`}>
+              <Card key={idx} className={`hover:shadow-lg transition-shadow animate-scale-in hover:scale-105 transition-transform ${service.badge ? 'border-2 border-primary' : ''} flex flex-col`}>
                 <CardHeader>
                   {service.badge && (
                     <div className="mb-3">
@@ -367,8 +367,24 @@ const Index = () => {
                   </div>
                   <CardTitle className="text-xl">{service.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">{service.description}</CardDescription>
+                <CardContent className="flex-grow flex flex-col justify-between">
+                  <CardDescription className="text-base mb-6">{service.description}</CardDescription>
+                  <div className="flex flex-col gap-2 mt-auto">
+                    <Button 
+                      variant="default" 
+                      className="w-full"
+                      onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                    >
+                      Записаться
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      className="w-full"
+                      onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                    >
+                      Узнать подробнее
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
