@@ -478,7 +478,7 @@ const Index = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Email</h3>
-                  <p className="text-muted-foreground">s.kuzikova@example.com</p>
+                  <p className="text-muted-foreground">s_kuzikova@mail.ru</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
