@@ -13,6 +13,7 @@ const Index = () => {
 
   const menuItems = [
     { href: '#about', label: 'Обо мне' },
+    { href: '#unique', label: 'Моя уникальность' },
     { href: '#services', label: 'Услуги' },
     { href: '#methods', label: 'Методы' },
     { href: '#testimonials', label: 'Отзывы' },
@@ -22,26 +23,35 @@ const Index = () => {
 
   const services = [
     {
+      icon: "Sparkles",
+      title: "Перформанс-терапия",
+      description: "Уникальный авторский курс: исцеление через театротерапию, танец и вокал. Преодоление неуверенности, страхов и комплексов",
+      badge: "Авторский курс"
+    },
+    {
+      icon: "Palette",
+      title: "Арт-терапия",
+      description: "Исцеление творчеством: живопись, лепка, песочная терапия. Соединяю психологию и творческое самовыражение"
+    },
+    {
+      icon: "Brain",
+      title: "Гештальт-терапия",
+      description: "Работа с тревожностью, страхами, отношениями. Сертифицированный гештальт-терапевт"
+    },
+    {
       icon: "Users",
       title: "Семейная терапия",
-      description: "Помогаю восстановить гармонию в отношениях, разрешить конфликты и укрепить семейные связи"
-    },
-    {
-      icon: "Heart",
-      title: "Работа с тревожностью",
-      description: "Эффективные методы преодоления тревожных состояний, панических атак и страхов"
-    },
-    {
-      icon: "Sun",
-      title: "Терапия депрессии",
-      description: "Комплексный подход к работе с депрессивными состояниями и восстановлению жизненных сил"
+      description: "Гармонизация семейных отношений, работа с конфликтами, восстановление близости"
     }
   ];
 
   const methods = [
-    { title: "Когнитивно-поведенческая терапия", desc: "Работа с мыслями и установками" },
-    { title: "Гештальт-терапия", desc: "Осознание здесь и сейчас" },
-    { title: "Системная семейная терапия", desc: "Работа с семейными паттернами" }
+    { icon: "Theater", title: "Театротерапия", desc: "Работа с неуверенностью через ролевые игры" },
+    { icon: "Music", title: "Танцевально-двигательная терапия", desc: "Освобождение эмоций через движение и танец" },
+    { icon: "Mic", title: "Вокалотерапия", desc: "Исцеление голосом, работа со страхами" },
+    { icon: "Palette", title: "Изобразительная арт-терапия", desc: "Творческое самовыражение и исцеление" },
+    { icon: "Eye", title: "Гештальт-терапия", desc: "Осознанность здесь и сейчас" },
+    { icon: "Shapes", title: "Песочная терапия", desc: "Работа с подсознанием через песок" }
   ];
 
   const testimonials = [
@@ -114,12 +124,18 @@ const Index = () => {
       <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-secondary/30 via-background to-primary/5">
         <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in">
-            <p className="text-primary font-semibold mb-2">Руководитель Kuzikova school</p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">Сертифицированный гештальт-терапевт</span>
+              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">Член РААТ</span>
+            </div>
             <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
               Светлана Алексеевна<br />Кузикова
             </h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              Профессиональный психолог, руководитель Центра психологии и творчества Kuzikova school, автор программ и курсов по психологии и арт-терапии
+            <p className="text-xl text-muted-foreground mb-4">
+              Исцеление творчеством: соединяю психологию и арт-терапию
+            </p>
+            <p className="text-lg mb-8">
+              Руководитель Kuzikova school. Автор уникального курса "Перформанс-терапия"
             </p>
             <div className="flex gap-4">
               <Button size="lg" asChild>
@@ -146,8 +162,16 @@ const Index = () => {
           <div className="space-y-8">
             <Card className="animate-fade-in">
               <CardContent className="pt-6 space-y-4">
-                <p className="text-lg">
-                  Я — профессиональный психолог, руководитель Центра психологии и творчества <strong>Kuzikova school</strong>, автор программ и курсов по психологии и арт-терапии.
+                <div className="bg-primary/5 p-6 rounded-lg mb-6">
+                  <p className="text-xl font-semibold text-center mb-3">
+                    Дипломированный психолог с <span className="text-primary text-2xl">15-летним опытом</span> работы
+                  </p>
+                  <p className="text-center text-base">
+                    Сертифицированный гештальт-терапевт • Член РААТ • Руководитель Kuzikova school
+                  </p>
+                </div>
+                <p className="text-lg leading-relaxed">
+                  Моя уникальность — я <strong>соединяю психологию и арт-терапию</strong> (исцеление творчеством). Более 15 лет помогаю людям обрести гармонию через традиционные психологические методы и творческое самовыражение.
                 </p>
                 
                 <div className="pt-4">
@@ -185,17 +209,17 @@ const Index = () => {
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-6 pt-6">
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-primary mb-2">20</div>
-                    <div className="text-muted-foreground">лет опыта</div>
+                  <div className="text-center p-4 bg-primary/5 rounded-lg">
+                    <div className="text-5xl font-bold text-primary mb-2">15</div>
+                    <div className="text-muted-foreground font-medium">лет практики</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-primary mb-2">15000+</div>
-                    <div className="text-muted-foreground">часов подготовки</div>
+                  <div className="text-center p-4 bg-primary/5 rounded-lg">
+                    <div className="text-5xl font-bold text-primary mb-2">15000+</div>
+                    <div className="text-muted-foreground font-medium">часов обучения</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-primary mb-2">10+</div>
-                    <div className="text-muted-foreground">лет работы с семьями</div>
+                  <div className="text-center p-4 bg-primary/5 rounded-lg">
+                    <Icon name="Award" className="text-primary mx-auto mb-2" size={40} />
+                    <div className="text-muted-foreground font-medium">Член РААТ</div>
                   </div>
                 </div>
               </CardContent>
@@ -206,18 +230,51 @@ const Index = () => {
                 <CardTitle className="text-2xl">Образование и квалификация</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div>
+                <div className="space-y-4">
+                  <div className="bg-primary/5 p-4 rounded-lg">
+                    <p className="text-lg font-semibold mb-2">Основное образование и статус</p>
+                    <ul className="space-y-2 text-base">
+                      <li className="flex gap-2">
+                        <Icon name="GraduationCap" className="text-primary flex-shrink-0 mt-1" size={20} />
+                        <span>Высшее психологическое образование</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <Icon name="Award" className="text-primary flex-shrink-0 mt-1" size={20} />
+                        <span><strong>Сертифицированный гештальт-терапевт</strong> (Московский гештальт институт)</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <Icon name="Star" className="text-primary flex-shrink-0 mt-1" size={20} />
+                        <span><strong>Член Российской арт-терапевтической ассоциации (РААТ)</strong></span>
+                      </li>
+                      <li className="flex gap-2">
+                        <Icon name="Clock" className="text-primary flex-shrink-0 mt-1" size={20} />
+                        <span>Более <strong>15 000 часов</strong> профессиональной подготовки</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <Icon name="Briefcase" className="text-primary flex-shrink-0 mt-1" size={20} />
+                        <span>Опыт работы психологом: <strong>15 лет</strong></span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-secondary/20 p-4 rounded-lg">
+                      <Icon name="Users" className="text-primary mb-2" size={24} />
+                      <p className="text-base leading-relaxed">
+                        Преподаватель и супервизор психологов по арт-терапии
+                      </p>
+                    </div>
+                    <div className="bg-secondary/20 p-4 rounded-lg">
+                      <Icon name="Tv" className="text-primary mb-2" size={24} />
+                      <p className="text-base leading-relaxed">
+                        Эксперт ТВ «Кубань24», «НТК», радио «Маяк»
+                      </p>
+                    </div>
+                  </div>
+
                   <p className="text-base leading-relaxed">
-                    Высшее психологическое образование. Более <strong>15 000 часов</strong> профессиональной психолого-педагогической подготовки. Опыт работы <strong>20 лет</strong>.
-                  </p>
-                  <p className="text-base leading-relaxed mt-3">
-                    Преподавание психологии на факультете повышения квалификации психологов. Более 10 лет опыта помощи семьям зависимых.
-                  </p>
-                  <p className="text-base leading-relaxed mt-3">
-                    Эксперт ТВ-каналов «Кубань24», «НТК», радио «Маяк», «Первое радио Кубани».
-                  </p>
-                  <p className="text-base leading-relaxed mt-3">
-                    Автор книг: "Профилактика зависимого поведения", "Саморазрушающее поведение", «Антистресс-путеводитель», «Речевая креативность» и др.
+                    <Icon name="Book" className="text-primary inline mr-2" size={20} />
+                    <strong>Автор книг:</strong> "Профилактика зависимого поведения", "Саморазрушающее поведение", «Антистресс-путеводитель», «Речевая креативность» и др.
                   </p>
                 </div>
 
@@ -268,18 +325,124 @@ const Index = () => {
         </div>
       </section>
 
+      <section id="unique" className="py-20 px-4 bg-gradient-to-br from-primary/5 via-secondary/10 to-background">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Моя уникальность</h2>
+            <p className="text-xl text-muted-foreground">Соединяю психологию и искусство для глубокого исцеления</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card className="animate-fade-in border-2 border-primary/20">
+              <CardHeader>
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto">
+                  <Icon name="Award" className="text-primary" size={32} />
+                </div>
+                <CardTitle className="text-2xl text-center">Дипломированный специалист</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center space-y-3">
+                <p className="text-lg"><strong>15 лет</strong> профессиональной психологической практики</p>
+                <p className="text-base">Сертифицированный гештальт-терапевт</p>
+                <p className="text-base">Член Российской арт-терапевтической ассоциации (РААТ)</p>
+              </CardContent>
+            </Card>
+
+            <Card className="animate-fade-in border-2 border-primary/20">
+              <CardHeader>
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto">
+                  <Icon name="Sparkles" className="text-primary" size={32} />
+                </div>
+                <CardTitle className="text-2xl text-center">Исцеление творчеством</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center space-y-3">
+                <p className="text-lg">Уникальное соединение <strong>психологии и арт-терапии</strong></p>
+                <p className="text-base">Работа через живопись, танец, театр, вокал и песочную терапию</p>
+                <p className="text-base">Творческие методы для глубинных изменений</p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Card className="animate-scale-in bg-gradient-to-r from-primary/5 to-secondary/5 border-2 border-primary">
+            <CardHeader className="text-center">
+              <div className="inline-block px-4 py-2 bg-primary text-primary-foreground rounded-full text-sm font-bold mb-4">
+                АВТОРСКИЙ КУРС
+              </div>
+              <CardTitle className="text-3xl mb-3">Перформанс-терапия</CardTitle>
+              <CardDescription className="text-lg">Моя гордость — уникальная программа исцеления</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <p className="text-center text-lg leading-relaxed">
+                Авторский курс, который через <strong>театротерапию, танцевально-двигательную терапию и вокал</strong> помогает преодолеть неуверенность, страхи и комплексы
+              </p>
+              
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center p-4 bg-white rounded-lg">
+                  <Icon name="Theater" className="text-primary mx-auto mb-3" size={40} />
+                  <h4 className="font-semibold mb-2">Театротерапия</h4>
+                  <p className="text-sm text-muted-foreground">Освобождение через роль и игру</p>
+                </div>
+                <div className="text-center p-4 bg-white rounded-lg">
+                  <Icon name="Music" className="text-primary mx-auto mb-3" size={40} />
+                  <h4 className="font-semibold mb-2">Танцевальная терапия</h4>
+                  <p className="text-sm text-muted-foreground">Исцеление через движение тела</p>
+                </div>
+                <div className="text-center p-4 bg-white rounded-lg">
+                  <Icon name="Mic" className="text-primary mx-auto mb-3" size={40} />
+                  <h4 className="font-semibold mb-2">Вокалотерапия</h4>
+                  <p className="text-sm text-muted-foreground">Сила голоса для трансформации</p>
+                </div>
+              </div>
+
+              <div className="bg-primary/10 p-6 rounded-lg text-center">
+                <p className="text-lg font-semibold mb-2">Результаты курса:</p>
+                <div className="flex flex-wrap justify-center gap-3 mt-4">
+                  <span className="px-4 py-2 bg-white rounded-full text-sm">Преодоление страхов</span>
+                  <span className="px-4 py-2 bg-white rounded-full text-sm">Уверенность в себе</span>
+                  <span className="px-4 py-2 bg-white rounded-full text-sm">Освобождение от комплексов</span>
+                  <span className="px-4 py-2 bg-white rounded-full text-sm">Раскрытие творческого потенциала</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <div className="mt-12 text-center">
+            <Card className="inline-block animate-fade-in">
+              <CardContent className="pt-6">
+                <Icon name="GraduationCap" className="text-primary mx-auto mb-4" size={48} />
+                <h3 className="text-2xl font-bold mb-3">Преподаватель и супервизор</h3>
+                <p className="text-lg text-muted-foreground mb-4">
+                  Повышаю квалификацию психологов по арт-терапии.<br />
+                  Обучаю специалистов уникальным методам работы
+                </p>
+                <div className="flex justify-center gap-2">
+                  <Icon name="Check" className="text-primary" size={20} />
+                  <span className="text-base">Сертифицированные программы обучения</span>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       <section id="services" className="py-20 px-4 bg-secondary/20">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-4">Услуги</h2>
           <p className="text-center text-muted-foreground mb-12 text-lg">Основные направления моей работы</p>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, idx) => (
-              <Card key={idx} className="hover:shadow-lg transition-shadow animate-scale-in hover:scale-105 transition-transform">
+              <Card key={idx} className={`hover:shadow-lg transition-shadow animate-scale-in hover:scale-105 transition-transform ${service.badge ? 'border-2 border-primary' : ''}`}>
                 <CardHeader>
+                  {service.badge && (
+                    <div className="mb-3">
+                      <span className="px-3 py-1 bg-primary text-primary-foreground rounded-full text-xs font-bold">
+                        {service.badge}
+                      </span>
+                    </div>
+                  )}
                   <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                     <Icon name={service.icon} className="text-primary" size={28} />
                   </div>
-                  <CardTitle className="text-2xl">{service.title}</CardTitle>
+                  <CardTitle className="text-xl">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">{service.description}</CardDescription>
@@ -294,14 +457,14 @@ const Index = () => {
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl font-bold text-center mb-4">Методы работы</h2>
           <p className="text-center text-muted-foreground mb-12 text-lg">Использую научно обоснованные подходы</p>
-          <div className="space-y-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {methods.map((method, idx) => (
-              <Card key={idx} className="hover:border-primary transition-colors animate-fade-in">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary"></div>
-                    {method.title}
-                  </CardTitle>
+              <Card key={idx} className="hover:border-primary transition-all hover:shadow-lg animate-fade-in">
+                <CardHeader className="text-center">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto">
+                    <Icon name={method.icon} className="text-primary" size={32} />
+                  </div>
+                  <CardTitle className="text-lg mb-2">{method.title}</CardTitle>
                   <CardDescription className="text-base">{method.desc}</CardDescription>
                 </CardHeader>
               </Card>
