@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -15,6 +15,24 @@ const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+  const [visitorCount, setVisitorCount] = useState<number | null>(null);
+
+  useEffect(() => {
+    const trackVisitor = async () => {
+      try {
+        const response = await fetch('https://functions.poehali.dev/b7f475c9-b32f-4c6f-8eb2-5f637cc10855', {
+          method: 'POST'
+        });
+        const data = await response.json();
+        if (data.visitors) {
+          setVisitorCount(data.visitors);
+        }
+      } catch (error) {
+        console.error('Failed to track visitor', error);
+      }
+    };
+    trackVisitor();
+  }, []);
 
   const menuItems = [
     { href: '#about', label: 'Обо мне' },
@@ -674,6 +692,12 @@ const Index = () => {
           </div>
           <div className="text-center pt-6 border-t border-primary-foreground/20">
             <p className="text-sm opacity-75">© 2024 Все права защищены</p>
+            {visitorCount !== null && (
+              <p className="text-xs opacity-60 mt-2">
+                <Icon name="Users" size={14} className="inline mr-1" />
+                Посетителей сегодня: {visitorCount}
+              </p>
+            )}
           </div>
         </div>
       </footer>

@@ -1,0 +1,10 @@
+{
+  "tests": [
+    {
+      "name": "Test visitor tracking",
+      "method": "POST",
+      "path": "/",
+      "expectedStatus": 200
+    }
+  ]
+}
