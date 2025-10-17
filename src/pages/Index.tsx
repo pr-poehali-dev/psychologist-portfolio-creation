@@ -303,13 +303,13 @@ const Index = () => {
           <div className="space-y-8">
             <Card className="animate-fade-in overflow-hidden">
               <CardContent className="pt-6 space-y-4">
-                <div className="grid md:grid-cols-2 gap-6 items-center mb-6">
-                  <div>
+                <div className="flex flex-col md:flex-row gap-6 items-start mb-6">
+                  <div className="flex-1">
                     <p className="text-lg leading-relaxed">
                       Я — профессиональный психолог, руководитель Центра психологии и творчества <strong>Kuzikova school</strong>. Помогаю людям обретать внутреннюю гармонию и уверенность через психологические методы и творческое самовыражение.
                     </p>
                   </div>
-                  <div className="rounded-lg overflow-hidden shadow-lg">
+                  <div className="rounded-lg overflow-hidden shadow-lg flex-shrink-0 w-full md:w-64">
                     <img 
                       src="https://cdn.poehali.dev/files/2f541b40-5ce3-42eb-86c1-babbbcac29d3.jpg" 
                       alt="Светлана Кузикова за работой"
