@@ -609,6 +609,89 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-20 px-4 bg-gradient-to-br from-secondary/10 to-primary/5">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-4">Фотогалерея</h2>
+          <p className="text-center text-muted-foreground mb-12 text-lg">Моменты с прошедших перформансов</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all animate-scale-in cursor-pointer">
+              <img 
+                src="https://cdn.poehali.dev/projects/0b645c37-3abc-4608-889b-baf1abf21130/files/b513c5c6-bf3b-4132-89e8-4e51866a379d.jpg" 
+                alt="Выпускной перформанс на сцене"
+                className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <p className="text-white font-semibold">Выпускной перформанс</p>
+              </div>
+            </div>
+            <div className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all animate-scale-in cursor-pointer">
+              <img 
+                src="https://cdn.poehali.dev/projects/0b645c37-3abc-4608-889b-baf1abf21130/files/7f00e686-3927-4b9c-879b-c0bc9cda2cb5.jpg" 
+                alt="Танцевальная терапия"
+                className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <p className="text-white font-semibold">Танцевальная терапия</p>
+              </div>
+            </div>
+            <div className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all animate-scale-in cursor-pointer">
+              <img 
+                src="https://cdn.poehali.dev/projects/0b645c37-3abc-4608-889b-baf1abf21130/files/796f3ecd-21e6-4b58-9721-333759dc2e52.jpg" 
+                alt="Вокалотерапия"
+                className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <p className="text-white font-semibold">Вокалотерапия</p>
+              </div>
+            </div>
+            <div className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all animate-scale-in cursor-pointer">
+              <img 
+                src="https://cdn.poehali.dev/projects/0b645c37-3abc-4608-889b-baf1abf21130/files/17415972-dce3-449b-8da3-e85fc10a6fed.jpg" 
+                alt="Овации после выступления"
+                className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <p className="text-white font-semibold">Овации после выступления</p>
+              </div>
+            </div>
+            <div className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all animate-scale-in cursor-pointer">
+              <img 
+                src="https://cdn.poehali.dev/projects/0b645c37-3abc-4608-889b-baf1abf21130/files/44103044-4df2-4460-a03e-42f97c20448f.jpg" 
+                alt="Театротерапия с масками"
+                className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <p className="text-white font-semibold">Театротерапия с масками</p>
+              </div>
+            </div>
+            <div className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all animate-scale-in cursor-pointer">
+              <img 
+                src="https://cdn.poehali.dev/projects/0b645c37-3abc-4608-889b-baf1abf21130/files/42a1dbd8-6850-44db-a4bd-ca5bba386f7a.jpg" 
+                alt="Эмоциональное самовыражение"
+                className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <p className="text-white font-semibold">Эмоциональное самовыражение</p>
+              </div>
+            </div>
+          </div>
+          <div className="text-center mt-12">
+            <p className="text-muted-foreground mb-4">
+              <Icon name="Camera" className="inline mr-2" size={18} />
+              Каждый курс завершается выпускным перформансом — вашим уникальным творческим проектом
+            </p>
+            <Button 
+              size="lg"
+              onClick={() => {
+                setPerformanceDialogOpen(true);
+              }}
+            >
+              Узнать о курсе
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <section id="articles" className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl font-bold text-center mb-4">Полезные статьи</h2>
