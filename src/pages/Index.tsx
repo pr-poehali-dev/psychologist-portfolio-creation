@@ -302,23 +302,20 @@ const Index = () => {
           <h2 className="text-4xl font-bold text-center mb-12">Обо мне</h2>
           <div className="space-y-8">
             <Card className="animate-fade-in overflow-hidden">
-              <CardContent className="pt-6 space-y-4">
-                <div className="flex flex-col md:flex-row gap-8 items-start mb-6">
-                  <div className="rounded-lg overflow-hidden shadow-lg flex-shrink-0 w-full md:w-64">
-                    <img 
-                      src="https://cdn.poehali.dev/files/2f541b40-5ce3-42eb-86c1-babbbcac29d3.jpg" 
-                      alt="Светлана Кузикова за работой"
-                      className="w-full h-auto object-cover"
-                    />
-                  </div>
-                  <div className="flex-1 flex items-center">
-                    <p className="text-lg leading-relaxed">
-                      Я — профессиональный психолог, руководитель Центра психологии и творчества <strong>Kuzikova school</strong>. Помогаю людям обретать внутреннюю гармонию и уверенность через психологические методы и творческое самовыражение.
-                    </p>
-                  </div>
+              <CardContent className="pt-6">
+                <div className="md:float-left md:mr-6 md:mb-4 w-full md:w-64 rounded-lg overflow-hidden shadow-lg">
+                  <img 
+                    src="https://cdn.poehali.dev/files/2f541b40-5ce3-42eb-86c1-babbbcac29d3.jpg" 
+                    alt="Светлана Кузикова за работой"
+                    className="w-full h-auto object-cover"
+                  />
                 </div>
                 
-                <div className="pt-4">
+                <p className="text-lg leading-relaxed mb-4">
+                  Я — профессиональный психолог, руководитель Центра психологии и творчества <strong>Kuzikova school</strong>. Помогаю людям обретать внутреннюю гармонию и уверенность через психологические методы и творческое самовыражение.
+                </p>
+                
+                <div>
                   <h3 className="font-semibold text-xl mb-3 text-primary">Ко мне Вы можете обратиться по вопросам:</h3>
                   <ul className="space-y-2 text-base">
                     <li className="flex gap-2">
