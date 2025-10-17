@@ -303,7 +303,7 @@ const Index = () => {
           <div className="space-y-8">
             <Card className="animate-fade-in overflow-hidden">
               <CardContent className="pt-6">
-                <div className="md:float-left md:mr-6 md:mb-4 w-full md:w-64 rounded-lg overflow-hidden shadow-lg">
+                <div className="md:float-left md:mr-6 md:mb-4 w-full md:w-72 rounded-lg overflow-hidden shadow-lg">
                   <img 
                     src="https://cdn.poehali.dev/files/2f541b40-5ce3-42eb-86c1-babbbcac29d3.jpg" 
                     alt="Светлана Кузикова за работой"
@@ -311,11 +311,11 @@ const Index = () => {
                   />
                 </div>
                 
-                <p className="text-lg leading-relaxed mb-4">
+                <p className="text-lg leading-relaxed mb-6">
                   Я — профессиональный психолог, руководитель Центра психологии и творчества <strong>Kuzikova school</strong>. Помогаю людям обретать внутреннюю гармонию и уверенность через психологические методы и творческое самовыражение.
                 </p>
                 
-                <div>
+                <div className="clear-left">
                   <h3 className="font-semibold text-xl mb-3 text-primary">Ко мне Вы можете обратиться по вопросам:</h3>
                   <ul className="space-y-2 text-base">
                     <li className="flex gap-2">
@@ -345,7 +345,7 @@ const Index = () => {
                   </ul>
                 </div>
 
-                <p className="text-base italic text-muted-foreground pt-4">
+                <p className="text-base italic text-muted-foreground pt-6 clear-both">
                   Принимаю очно в г. Краснодар и онлайн. Приходите! Вместе найти выход проще...
                 </p>
 
