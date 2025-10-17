@@ -13,8 +13,8 @@ const Index = () => {
 
   const menuItems = [
     { href: '#about', label: 'Обо мне' },
-    { href: '#services', label: 'Услуги' },
     { href: '#methods', label: 'Методы' },
+    { href: '#services', label: 'Услуги' },
     { href: '#testimonials', label: 'Отзывы' },
     { href: '#articles', label: 'Статьи' },
     { href: '#contact', label: 'Контакты' }
@@ -45,12 +45,12 @@ const Index = () => {
   ];
 
   const methods = [
-    { icon: "Theater", title: "Театротерапия", desc: "Работа с неуверенностью через ролевые игры" },
-    { icon: "Music", title: "Танцевально-двигательная терапия", desc: "Освобождение эмоций через движение и танец" },
-    { icon: "Mic", title: "Вокалотерапия", desc: "Исцеление голосом, работа со страхами" },
-    { icon: "Palette", title: "Изобразительная арт-терапия", desc: "Творческое самовыражение и исцеление" },
     { icon: "Eye", title: "Гештальт-терапия", desc: "Осознанность здесь и сейчас" },
-    { icon: "Shapes", title: "Песочная терапия", desc: "Работа с подсознанием через песок" }
+    { icon: "Theater", title: "Театротерапия", desc: "Работа с неуверенностью через ролевые игры" },
+    { icon: "Music", title: "Танцевальная терапия", desc: "Освобождение эмоций через движение" },
+    { icon: "Mic", title: "Вокалотерапия", desc: "Исцеление голосом, работа со страхами" },
+    { icon: "Palette", title: "Арт-терапия", desc: "Творческое самовыражение и исцеление" },
+    { icon: "MessagesSquare", title: "Ораторское искусство", desc: "Развитие уверенной речи и коммуникации" }
   ];
 
   const testimonials = [
@@ -327,6 +327,22 @@ const Index = () => {
         </div>
       </section>
 
+      <section id="methods" className="py-16 px-4 bg-gradient-to-br from-primary/5 to-secondary/10">
+        <div className="container mx-auto max-w-5xl">
+          <h2 className="text-3xl font-bold text-center mb-3">Методы работы</h2>
+          <p className="text-center text-muted-foreground mb-10">Использую научно обоснованные подходы</p>
+          <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {methods.map((method, idx) => (
+              <div key={idx} className="bg-white rounded-lg p-4 text-center hover:shadow-md transition-shadow">
+                <Icon name={method.icon} className="text-primary mx-auto mb-2" size={28} />
+                <h3 className="font-semibold text-sm mb-1">{method.title}</h3>
+                <p className="text-xs text-muted-foreground">{method.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="services" className="py-20 px-4 bg-secondary/20">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-4">Услуги</h2>
@@ -350,26 +366,6 @@ const Index = () => {
                 <CardContent>
                   <CardDescription className="text-base">{service.description}</CardDescription>
                 </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="methods" className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl font-bold text-center mb-4">Методы работы</h2>
-          <p className="text-center text-muted-foreground mb-12 text-lg">Использую научно обоснованные подходы</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {methods.map((method, idx) => (
-              <Card key={idx} className="hover:border-primary transition-all hover:shadow-lg animate-fade-in">
-                <CardHeader className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto">
-                    <Icon name={method.icon} className="text-primary" size={32} />
-                  </div>
-                  <CardTitle className="text-lg mb-2">{method.title}</CardTitle>
-                  <CardDescription className="text-base">{method.desc}</CardDescription>
-                </CardHeader>
               </Card>
             ))}
           </div>
