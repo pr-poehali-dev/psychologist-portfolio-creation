@@ -5,10 +5,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Checkbox } from "@/components/ui/checkbox";
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+  const [agreedToPolicy, setAgreedToPolicy] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const menuItems = [
@@ -531,7 +533,24 @@ const Index = () => {
                     rows={4}
                     required
                   />
-                  <Button type="submit" className="w-full" size="lg">
+                  <div className="flex items-start gap-3 pt-2">
+                    <Checkbox 
+                      id="privacy-policy" 
+                      checked={agreedToPolicy}
+                      onCheckedChange={(checked) => setAgreedToPolicy(checked as boolean)}
+                      required
+                    />
+                    <label 
+                      htmlFor="privacy-policy" 
+                      className="text-sm text-muted-foreground leading-relaxed cursor-pointer"
+                    >
+                      Я согласен(на) на обработку персональных данных и с{' '}
+                      <a href="#" className="text-primary underline hover:text-primary/80">
+                        политикой конфиденциальности
+                      </a>
+                    </label>
+                  </div>
+                  <Button type="submit" className="w-full" size="lg" disabled={!agreedToPolicy}>
                     Отправить заявку
                   </Button>
                 </form>
