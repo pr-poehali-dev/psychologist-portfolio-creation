@@ -41,8 +41,8 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     email = body_data.get('email', '')
     message = body_data.get('message', '')
     
-    bot_token = os.environ.get('TG_BOT_TOKEN', '').strip()
-    chat_id = os.environ.get('TG_CHAT_ID', '').strip()
+    bot_token = os.environ.get('TELEGRAM_TOKEN', '').strip()
+    chat_id = os.environ.get('TELEGRAM_CHATID', '').strip()
     
     if not bot_token or not chat_id:
         return {

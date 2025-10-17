@@ -13,6 +13,8 @@ const Index = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const [agreedToPolicy, setAgreedToPolicy] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
 
   const menuItems = [
     { href: '#about', label: 'Обо мне' },
@@ -75,9 +77,34 @@ const Index = () => {
     { title: "Депрессия: когда стоит обратиться к специалисту", date: "1 октября 2024" }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    try {
+      const response = await fetch('https://functions.poehali.dev/df3e7860-6923-452c-9dd2-a39c6b60db65', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmitMessage('✅ Спасибо! Ваша заявка отправлена. Я свяжусь с вами в ближайшее время.');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+        setAgreedToPolicy(false);
+      } else {
+        setSubmitMessage('❌ Произошла ошибка. Попробуйте позже или свяжитесь со мной по телефону.');
+      }
+    } catch (error) {
+      setSubmitMessage('❌ Произошла ошибка. Попробуйте позже или свяжитесь со мной по телефону.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -555,8 +582,13 @@ const Index = () => {
                       </Link>
                     </label>
                   </div>
-                  <Button type="submit" className="w-full" size="lg" disabled={!agreedToPolicy}>
-                    Отправить заявку
+                  {submitMessage && (
+                    <div className={`p-4 rounded-md ${submitMessage.startsWith('✅') ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'}`}>
+                      {submitMessage}
+                    </div>
+                  )}
+                  <Button type="submit" className="w-full" size="lg" disabled={!agreedToPolicy || isSubmitting}>
+                    {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
                   </Button>
                 </form>
               </CardContent>
