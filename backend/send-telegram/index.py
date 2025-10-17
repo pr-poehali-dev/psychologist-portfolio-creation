@@ -40,6 +40,7 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     phone = body_data.get('phone', '')
     email = body_data.get('email', '')
     message = body_data.get('message', '')
+    preferred_time = body_data.get('preferredTime', '')
     
     bot_token = os.environ.get('TELEGRAM_TOKEN', '').strip()
     chat_id = os.environ.get('TELEGRAM_CHATID', '').strip()
@@ -54,11 +55,13 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
             'body': json.dumps({'error': f'Config missing - token: {bool(bot_token)}, chat: {bool(chat_id)}'})
         }
     
+    time_info = f'\n⏰ Удобное время: {preferred_time}' if preferred_time else ''
+    
     telegram_message = f'''🔔 Новая заявка с сайта
 
 👤 Имя: {name}
 📱 Телефон: {phone}
-✉️ Email: {email}
+✉️ Email: {email}{time_info}
 
 💬 Сообщение:
 {message}'''

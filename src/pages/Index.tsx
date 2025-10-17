@@ -10,7 +10,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '', preferredTime: '' });
   const [agreedToPolicy, setAgreedToPolicy] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -95,7 +95,7 @@ const Index = () => {
 
       if (response.ok && data.success) {
         setSubmitMessage('✅ Спасибо! Ваша заявка отправлена. Я свяжусь с вами в ближайшее время.');
-        setFormData({ name: '', email: '', phone: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', message: '', preferredTime: '' });
         setAgreedToPolicy(false);
       } else {
         setSubmitMessage('❌ Произошла ошибка. Попробуйте позже или свяжитесь со мной по телефону.');
@@ -561,6 +561,23 @@ const Index = () => {
                     rows={4}
                     required
                   />
+                  <div>
+                    <label htmlFor="preferredTime" className="text-sm font-medium mb-2 block">Предпочтительное время для консультации</label>
+                    <select
+                      id="preferredTime"
+                      value={formData.preferredTime}
+                      onChange={(e) => setFormData({...formData, preferredTime: e.target.value})}
+                      className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+                      required
+                    >
+                      <option value="">Выберите удобное время</option>
+                      <option value="Утро (9:00 - 12:00)">Утро (9:00 - 12:00)</option>
+                      <option value="День (12:00 - 15:00)">День (12:00 - 15:00)</option>
+                      <option value="Вечер (15:00 - 18:00)">Вечер (15:00 - 18:00)</option>
+                      <option value="Позднее (18:00 - 20:00)">Позднее (18:00 - 20:00)</option>
+                      <option value="Выходные">Выходные</option>
+                    </select>
+                  </div>
                   <div className="flex items-start gap-3 pt-2">
                     <Checkbox 
                       id="privacy-policy" 
