@@ -77,9 +77,48 @@ const Index = () => {
   ];
 
   const testimonials = [
-    { name: "Мария С.", text: "Светлана Алексеевна помогла мне преодолеть длительную депрессию. Благодарна за профессионализм и человечность!", rating: 5 },
-    { name: "Алексей К.", text: "Работа с семейными конфликтами дала потрясающие результаты. Наша семья снова счастлива.", rating: 5 },
-    { name: "Елена В.", text: "Справилась с паническими атаками после нескольких сессий. Рекомендую всем, кто ищет квалифицированного специалиста.", rating: 5 }
+    { 
+      name: "Мария С.", 
+      text: "Светлана Алексеевна помогла мне преодолеть длительную депрессию. Благодарна за профессионализм и человечность!", 
+      rating: 5,
+      service: "Индивидуальная терапия",
+      date: "Октябрь 2024"
+    },
+    { 
+      name: "Алексей К.", 
+      text: "Работа с семейными конфликтами дала потрясающие результаты. Наша семья снова счастлива.", 
+      rating: 5,
+      service: "Семейная терапия",
+      date: "Сентябрь 2024"
+    },
+    { 
+      name: "Елена В.", 
+      text: "Справилась с паническими атаками после нескольких сессий. Рекомендую всем, кто ищет квалифицированного специалиста.", 
+      rating: 5,
+      service: "Работа со страхами",
+      date: "Август 2024"
+    },
+    { 
+      name: "Ирина М.", 
+      text: "Перформанс-терапия - это нечто! Я раскрылась как личность, избавилась от комплексов. Спасибо за такой уникальный подход!", 
+      rating: 5,
+      service: "Перформанс-терапия",
+      date: "Октябрь 2024"
+    },
+    { 
+      name: "Дмитрий П.", 
+      text: "После курса вокалотерапии перестал бояться публичных выступлений. Чувствую себя уверенно на работе и в жизни.", 
+      rating: 5,
+      service: "Вокалотерапия",
+      date: "Сентябрь 2024"
+    },
+    { 
+      name: "Анна Л.", 
+      text: "Арт-терапия помогла мне найти себя. Теперь я понимаю свои эмоции и умею с ними работать. Светлана - настоящий профессионал!", 
+      rating: 5,
+      service: "Арт-терапия",
+      date: "Июль 2024"
+    }
   ];
 
   const faqs = [
@@ -444,22 +483,45 @@ const Index = () => {
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-4">Отзывы клиентов</h2>
           <p className="text-center text-muted-foreground mb-12 text-lg">Что говорят люди, с которыми я работала</p>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {testimonials.map((testimonial, idx) => (
-              <Card key={idx} className="animate-scale-in">
+              <Card key={idx} className="animate-scale-in hover:shadow-xl transition-all group">
                 <CardHeader>
-                  <div className="flex gap-1 mb-2">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Icon key={i} name="Star" className="text-yellow-500 fill-yellow-500" size={20} />
-                    ))}
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex gap-1">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Icon key={i} name="Star" className="text-yellow-500 fill-yellow-500" size={18} />
+                      ))}
+                    </div>
+                    <span className="text-xs text-muted-foreground">{testimonial.date}</span>
                   </div>
-                  <CardTitle className="text-lg">{testimonial.name}</CardTitle>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Icon name="User" className="text-primary" size={20} />
+                    {testimonial.name}
+                  </CardTitle>
+                  <CardDescription className="text-sm font-medium text-primary">
+                    {testimonial.service}
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground italic">"{testimonial.text}"</p>
+                  <div className="relative">
+                    <Icon name="Quote" className="absolute -top-2 -left-2 text-primary/10" size={40} />
+                    <p className="text-muted-foreground italic relative z-10 leading-relaxed">
+                      {testimonial.text}
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
             ))}
+          </div>
+          <div className="text-center mt-12">
+            <p className="text-muted-foreground mb-4">Хотите оставить свой отзыв?</p>
+            <Button 
+              size="lg"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Записаться на консультацию
+            </Button>
           </div>
         </div>
       </section>
