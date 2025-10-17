@@ -329,12 +329,16 @@ const Index = () => {
 
       <section id="methods" className="py-16 px-4 bg-gradient-to-br from-primary/5 to-secondary/10">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-3xl font-bold text-center mb-3">Методы работы</h2>
-          <p className="text-center text-muted-foreground mb-10">Использую научно обоснованные подходы</p>
+          <h2 className="text-3xl font-bold text-center mb-3 animate-fade-in">Методы работы</h2>
+          <p className="text-center text-muted-foreground mb-10 animate-fade-in">Использую научно обоснованные подходы</p>
           <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4">
             {methods.map((method, idx) => (
-              <div key={idx} className="bg-white rounded-lg p-4 text-center hover:shadow-md transition-shadow">
-                <Icon name={method.icon} className="text-primary mx-auto mb-2" size={28} />
+              <div 
+                key={idx} 
+                className="bg-white rounded-lg p-4 text-center hover:shadow-md transition-all hover:scale-105 hover:-translate-y-1 animate-scale-in"
+                style={{ animationDelay: `${idx * 0.1}s` }}
+              >
+                <Icon name={method.icon} className="text-primary mx-auto mb-2 transition-transform hover:scale-110" size={28} />
                 <h3 className="font-semibold text-sm mb-1">{method.title}</h3>
                 <p className="text-xs text-muted-foreground">{method.desc}</p>
               </div>
