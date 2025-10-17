@@ -38,9 +38,62 @@ const Index = () => {
     { href: '#about', label: 'Обо мне' },
     { href: '#methods', label: 'Методы' },
     { href: '#services', label: 'Услуги' },
+    { href: '#prices', label: 'Цены' },
     { href: '#testimonials', label: 'Отзывы' },
     { href: '#articles', label: 'Статьи' },
     { href: '#contact', label: 'Контакты' }
+  ];
+
+  const prices = [
+    {
+      title: 'Индивидуальная консультация',
+      duration: '50 минут',
+      price: '3 000',
+      features: [
+        'Работа с любыми запросами',
+        'Гештальт-терапия',
+        'Онлайн или очно',
+        'Полная конфиденциальность'
+      ],
+      popular: false
+    },
+    {
+      title: 'Перформанс-терапия',
+      duration: 'Курс 8 занятий',
+      price: '20 000',
+      features: [
+        'Театротерапия',
+        'Танцевальная терапия',
+        'Вокалотерапия',
+        'Групповые занятия',
+        'Авторская методика'
+      ],
+      popular: true
+    },
+    {
+      title: 'Семейная терапия',
+      duration: '60 минут',
+      price: '4 000',
+      features: [
+        'Работа с парой',
+        'Разрешение конфликтов',
+        'Улучшение отношений',
+        'Онлайн или очно'
+      ],
+      popular: false
+    },
+    {
+      title: 'Арт-терапия',
+      duration: '90 минут',
+      price: '3 500',
+      features: [
+        'Живопись, лепка',
+        'Песочная терапия',
+        'Творческое самовыражение',
+        'Материалы включены'
+      ],
+      popular: false
+    }
   ];
 
   const services = [
@@ -475,6 +528,60 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="prices" className="py-20 px-4">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-4">Стоимость услуг</h2>
+          <p className="text-center text-muted-foreground mb-12 text-lg">Прозрачные цены без скрытых платежей</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {prices.map((price, idx) => (
+              <Card 
+                key={idx} 
+                className={`animate-scale-in hover:shadow-xl transition-all relative ${price.popular ? 'border-2 border-primary shadow-lg scale-105' : ''}`}
+              >
+                {price.popular && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-xs font-bold">
+                      Популярно
+                    </span>
+                  </div>
+                )}
+                <CardHeader>
+                  <CardTitle className="text-xl text-center">{price.title}</CardTitle>
+                  <CardDescription className="text-center text-sm">{price.duration}</CardDescription>
+                  <div className="text-center mt-4">
+                    <span className="text-4xl font-bold text-primary">{price.price}</span>
+                    <span className="text-xl text-muted-foreground ml-1">₽</span>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3">
+                    {price.features.map((feature, featureIdx) => (
+                      <li key={featureIdx} className="flex items-start gap-2 text-sm">
+                        <Icon name="Check" className="text-green-500 flex-shrink-0 mt-0.5" size={16} />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button 
+                    className="w-full mt-6" 
+                    variant={price.popular ? "default" : "outline"}
+                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
+                    Записаться
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <p className="text-sm text-muted-foreground mb-4">
+              <Icon name="Info" className="inline mr-1" size={16} />
+              Первая консультация может быть проведена бесплатно для знакомства. Уточняйте детали при записи.
+            </p>
           </div>
         </div>
       </section>
