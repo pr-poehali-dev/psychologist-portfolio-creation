@@ -579,15 +579,15 @@ const Index = () => {
             <div>
               <p className="mb-3 font-semibold text-lg">Правовая информация</p>
               <div className="space-y-2 text-sm opacity-90">
-                <a href="https://disk.yandex.ru/i/uYn3_o7baO2GSw" target="_blank" rel="noopener noreferrer" className="block hover:opacity-100 transition-opacity underline">
+                <Link to="/privacy" className="block hover:opacity-100 transition-opacity underline">
                   Политика конфиденциальности
-                </a>
-                <a href="https://disk.yandex.ru/i/-bYRWaWj_7bgCg" target="_blank" rel="noopener noreferrer" className="block hover:opacity-100 transition-opacity underline">
+                </Link>
+                <Link to="/terms" className="block hover:opacity-100 transition-opacity underline">
                   Публичная оферта
-                </a>
-                <a href="https://disk.yandex.ru/i/OaR47K7F_Z_l_A" target="_blank" rel="noopener noreferrer" className="block hover:opacity-100 transition-opacity underline">
+                </Link>
+                <Link to="/consent" className="block hover:opacity-100 transition-opacity underline">
                   Согласие на обработку персональных данных
-                </a>
+                </Link>
               </div>
             </div>
           </div>
