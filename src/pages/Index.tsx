@@ -114,12 +114,12 @@ const Index = () => {
       <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-secondary/30 via-background to-primary/5">
         <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in">
-            <p className="text-primary font-semibold mb-2">Психолог с 12-летним опытом</p>
+            <p className="text-primary font-semibold mb-2">Руководитель Kuzikova school</p>
             <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
               Светлана Алексеевна<br />Кузикова
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Помогаю обрести внутреннюю гармонию, преодолеть кризисы и построить счастливые отношения
+              Профессиональный психолог, руководитель Центра психологии и творчества Kuzikova school, автор программ и курсов по психологии и арт-терапии
             </p>
             <div className="flex gap-4">
               <Button size="lg" asChild>
@@ -143,30 +143,128 @@ const Index = () => {
       <section id="about" className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl font-bold text-center mb-12">Обо мне</h2>
-          <Card className="animate-fade-in">
-            <CardContent className="pt-6 space-y-4 text-lg">
-              <p>
-                Я — дипломированный психолог с 12-летним опытом работы. За это время я помогла более 500 людям обрести внутреннее равновесие и научиться справляться с жизненными трудностями.
-              </p>
-              <p>
-                Моя специализация — семейная терапия, работа с тревожными и депрессивными состояниями. Я убеждена, что каждый человек обладает ресурсами для изменений, моя задача — помочь их раскрыть.
-              </p>
-              <div className="grid md:grid-cols-3 gap-6 pt-6">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">12+</div>
-                  <div className="text-muted-foreground">лет опыта</div>
+          <div className="space-y-8">
+            <Card className="animate-fade-in">
+              <CardContent className="pt-6 space-y-4">
+                <p className="text-lg">
+                  Я — профессиональный психолог, руководитель Центра психологии и творчества <strong>Kuzikova school</strong>, автор программ и курсов по психологии и арт-терапии.
+                </p>
+                
+                <div className="pt-4">
+                  <h3 className="font-semibold text-xl mb-3 text-primary">Ко мне Вы можете обратиться по вопросам:</h3>
+                  <ul className="space-y-2 text-base">
+                    <li className="flex gap-2">
+                      <Icon name="Check" className="text-primary flex-shrink-0 mt-1" size={20} />
+                      <span>выстраивания отношений с самим собой и окружающими</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <Icon name="Check" className="text-primary flex-shrink-0 mt-1" size={20} />
+                      <span>повышения самооценки и уверенности в себе</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <Icon name="Check" className="text-primary flex-shrink-0 mt-1" size={20} />
+                      <span>трудностей в общении, взаимоотношений в семье (с детьми, родителями, подростками)</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <Icon name="Check" className="text-primary flex-shrink-0 mt-1" size={20} />
+                      <span>постановки целей, продвижения в карьере</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <Icon name="Check" className="text-primary flex-shrink-0 mt-1" size={20} />
+                      <span>переживания негативных эмоциональных состояний, страха публичных выступлений</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <Icon name="Check" className="text-primary flex-shrink-0 mt-1" size={20} />
+                      <span>развития эмоционального интеллекта</span>
+                    </li>
+                  </ul>
                 </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">500+</div>
-                  <div className="text-muted-foreground">клиентов</div>
+
+                <p className="text-base italic text-muted-foreground pt-4">
+                  Принимаю очно в г. Краснодар и онлайн. Приходите! Вместе найти выход проще...
+                </p>
+
+                <div className="grid md:grid-cols-3 gap-6 pt-6">
+                  <div className="text-center">
+                    <div className="text-4xl font-bold text-primary mb-2">20</div>
+                    <div className="text-muted-foreground">лет опыта</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-4xl font-bold text-primary mb-2">15000+</div>
+                    <div className="text-muted-foreground">часов подготовки</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-4xl font-bold text-primary mb-2">10+</div>
+                    <div className="text-muted-foreground">лет работы с семьями</div>
+                  </div>
                 </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">3000+</div>
-                  <div className="text-muted-foreground">сессий</div>
+              </CardContent>
+            </Card>
+
+            <Card className="animate-fade-in">
+              <CardHeader>
+                <CardTitle className="text-2xl">Образование и квалификация</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <p className="text-base leading-relaxed">
+                    Высшее психологическое образование. Более <strong>15 000 часов</strong> профессиональной психолого-педагогической подготовки. Опыт работы <strong>20 лет</strong>.
+                  </p>
+                  <p className="text-base leading-relaxed mt-3">
+                    Преподавание психологии на факультете повышения квалификации психологов. Более 10 лет опыта помощи семьям зависимых.
+                  </p>
+                  <p className="text-base leading-relaxed mt-3">
+                    Эксперт ТВ-каналов «Кубань24», «НТК», радио «Маяк», «Первое радио Кубани».
+                  </p>
+                  <p className="text-base leading-relaxed mt-3">
+                    Автор книг: "Профилактика зависимого поведения", "Саморазрушающее поведение", «Антистресс-путеводитель», «Речевая креативность» и др.
+                  </p>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+
+                <Accordion type="single" collapsible className="mt-6">
+                  <AccordionItem value="education">
+                    <AccordionTrigger className="text-lg font-semibold">
+                      Дополнительное образование
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <ul className="space-y-2 text-sm">
+                        <li>• <strong>1999г.</strong> - Стажировка "Работа с молодежью в кризисных ситуациях" (Германия, Берлин)</li>
+                        <li>• <strong>2003г.</strong> - Международная программа для специалистов "Открытый мир" (США, New Mexico)</li>
+                        <li>• <strong>2006г.-2010г.</strong> - Московский гештальт институт, программа по психотерапии</li>
+                        <li>• <strong>2009г.-2010г.</strong> - Обучающая программа для психотерапевтов, психологов по методу символдрамы</li>
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="certificates">
+                    <AccordionTrigger className="text-lg font-semibold">
+                      Сертификаты и повышение квалификации
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <ul className="space-y-2 text-sm">
+                        <li>• <strong>2008г.</strong> - Терапия травмы и посттравматических расстройств (Московский гештальт институт)</li>
+                        <li>• <strong>2009г.</strong> - Телесно-ориентированная терапия</li>
+                        <li>• <strong>2010г.</strong> - Групповая психотерапия по методу символдрамы</li>
+                        <li>• <strong>2010г.</strong> - Детская психотерапия и психоанализ</li>
+                        <li>• <strong>2011г.</strong> - Спортивная психология (Москва)</li>
+                        <li>• <strong>2012г.</strong> - Песочная психотерапия (Sandplay)</li>
+                        <li>• <strong>2012г.</strong> - Арт-терапия в психологической практике</li>
+                        <li>• <strong>2013г.</strong> - Арт-терапия (Фрайбург, Германия)</li>
+                        <li>• <strong>2014г.</strong> - Детская психология. Консультирование</li>
+                        <li>• <strong>2015г.</strong> - Специальная детская психология. Психоневрология</li>
+                        <li>• <strong>2016г.</strong> - Арт-коучинг в работе с разными категориями населения</li>
+                        <li>• <strong>2016г.</strong> - Сертификационный тренерский курс</li>
+                        <li>• <strong>2017г.</strong> - Арт-терапия в работе с детьми. Сертификационный курс</li>
+                        <li>• <strong>2018г.</strong> - Курс эффективной коммуникации Ксении Телешовой</li>
+                        <li>• <strong>2019г.</strong> - Курс "Формула успеха" Радислава Гандапаса</li>
+                        <li>• <strong>2024г.</strong> - Профессия арт-терапевт. Международная школа арт-терапии</li>
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
