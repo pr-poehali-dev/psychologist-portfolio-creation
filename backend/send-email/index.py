@@ -85,9 +85,11 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     
     # Send email via Mail.ru SMTP
     try:
-        with smtplib.SMTP_SSL('smtp.mail.ru', 465) as server:
-            server.login(mail_user, mail_password)
-            server.send_message(msg)
+        server = smtplib.SMTP_SSL('smtp.mail.ru', 465, timeout=10)
+        server.set_debuglevel(0)
+        server.login(mail_user, mail_password)
+        server.send_message(msg)
+        server.quit()
         
         return {
             'statusCode': 200,
