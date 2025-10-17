@@ -37,7 +37,6 @@ const Index = () => {
   const menuItems = [
     { href: '#about', label: 'Обо мне' },
     { href: '#methods', label: 'Методы' },
-    { href: '#services', label: 'Услуги' },
     { href: '#prices', label: 'Цены' },
     { href: '#testimonials', label: 'Отзывы' },
     { href: '#articles', label: 'Статьи' },
@@ -487,52 +486,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="services" className="py-20 px-4 bg-secondary/20">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-4">Услуги</h2>
-          <p className="text-center text-muted-foreground mb-12 text-lg">Основные направления моей работы</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, idx) => (
-              <Card key={idx} className={`hover:shadow-lg transition-shadow animate-scale-in hover:scale-105 transition-transform ${service.badge ? 'border-2 border-primary' : ''} flex flex-col`}>
-                <CardHeader>
-                  {service.badge && (
-                    <div className="mb-3">
-                      <span className="px-3 py-1 bg-primary text-primary-foreground rounded-full text-xs font-bold">
-                        {service.badge}
-                      </span>
-                    </div>
-                  )}
-                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <Icon name={service.icon} className="text-primary" size={28} />
-                  </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="flex-grow flex flex-col justify-between">
-                  <CardDescription className="text-base mb-6">{service.description}</CardDescription>
-                  <div className="flex flex-col gap-2 mt-auto">
-                    <Button 
-                      variant="default" 
-                      className="w-full"
-                      onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                    >
-                      Записаться
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      className="w-full"
-                      onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                    >
-                      Узнать подробнее
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="prices" className="py-20 px-4">
+      <section id="prices" className="py-20 px-4 bg-secondary/20">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-4">Стоимость услуг</h2>
           <p className="text-center text-muted-foreground mb-12 text-lg">Прозрачные цены без скрытых платежей</p>
@@ -566,13 +520,31 @@ const Index = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button 
-                    className="w-full mt-6" 
-                    variant={price.popular ? "default" : "outline"}
-                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  >
-                    Записаться
-                  </Button>
+                  {price.popular ? (
+                    <div className="flex flex-col gap-2 mt-6">
+                      <Button 
+                        className="w-full" 
+                        onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                      >
+                        Записаться
+                      </Button>
+                      <Button 
+                        className="w-full" 
+                        variant="outline"
+                        onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                      >
+                        Подробнее
+                      </Button>
+                    </div>
+                  ) : (
+                    <Button 
+                      className="w-full mt-6" 
+                      variant="outline"
+                      onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                    >
+                      Записаться
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             ))}
