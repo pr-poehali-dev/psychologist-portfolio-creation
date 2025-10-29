@@ -49,7 +49,7 @@ const Index = () => {
     {
       title: 'Индивидуальная консультация',
       duration: '50 минут',
-      price: '3 000',
+      price: '4 000',
       features: [
         'Работа с любыми запросами',
         'Гештальт-терапия',
@@ -75,7 +75,7 @@ const Index = () => {
     {
       title: 'Семейная терапия',
       duration: '60 минут',
-      price: '4 000',
+      price: '6 000',
       features: [
         'Работа с парой',
         'Разрешение конфликтов',
@@ -85,14 +85,15 @@ const Index = () => {
       popular: false
     },
     {
-      title: 'Арт-терапия',
-      duration: '90 минут',
-      price: '3 500',
+      title: 'Курс повышения квалификации',
+      subtitle: '«Арт-терапия в психологической практике»',
+      duration: '7 модулей (2-х дневные семинары)',
+      link: 'https://kuzikova.com/art_terapy',
       features: [
         'Живопись, лепка',
         'Песочная терапия',
         'Творческое самовыражение',
-        'Материалы включены'
+        'Сертификат установленного образца'
       ],
       popular: false
     }
@@ -516,12 +517,15 @@ const Index = () => {
                 )}
                 <CardHeader>
                   <CardTitle className="text-xl text-center">{price.title}</CardTitle>
+                  {'subtitle' in price && <CardDescription className="text-center text-sm font-semibold mt-1">{price.subtitle}</CardDescription>}
                   <CardDescription className="text-center text-sm">{price.duration}</CardDescription>
-                  <div className="text-center mt-4">
-                    <span className="text-4xl font-bold text-primary">{price.price}</span>
-                    <span className="text-xl text-muted-foreground ml-1">₽</span>
-                    {price.priceNote && <span className="text-sm text-muted-foreground ml-1">{price.priceNote}</span>}
-                  </div>
+                  {'price' in price && (
+                    <div className="text-center mt-4">
+                      <span className="text-4xl font-bold text-primary">{price.price}</span>
+                      <span className="text-xl text-muted-foreground ml-1">₽</span>
+                      {price.priceNote && <span className="text-sm text-muted-foreground ml-1">{price.priceNote}</span>}
+                    </div>
+                  )}
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
@@ -548,6 +552,16 @@ const Index = () => {
                         Подробнее
                       </Button>
                     </div>
+                  ) : 'link' in price ? (
+                    <Button 
+                      className="w-full mt-6" 
+                      variant="outline"
+                      asChild
+                    >
+                      <a href={price.link} target="_blank" rel="noopener noreferrer">
+                        Узнать больше
+                      </a>
+                    </Button>
                   ) : (
                     <Button 
                       className="w-full mt-6" 
