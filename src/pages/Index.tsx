@@ -642,7 +642,7 @@ const Index = () => {
       <section className="py-20 px-4 bg-gradient-to-br from-secondary/10 to-primary/5">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-4">Фотогалерея</h2>
-          <p className="text-center text-muted-foreground mb-12 text-lg">Моменты с прошедших перформансов</p>
+          <p className="text-center text-muted-foreground mb-12 text-lg">Моменты с прошедших перфомансов арт-терапевтического курса "Перформанс-терапия"</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             <div className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all animate-scale-in cursor-pointer">
               <img 
