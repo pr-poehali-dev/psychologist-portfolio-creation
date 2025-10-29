@@ -88,6 +88,8 @@ const Index = () => {
       title: 'Курс повышения квалификации',
       subtitle: '«Арт-терапия в психологической практике»',
       duration: '7 модулей (2-х дневные семинары)',
+      price: '9 000',
+      priceNote: '/ модуль',
       link: 'https://kuzikova.com/art_terapy',
       features: [
         'Живопись, лепка',
