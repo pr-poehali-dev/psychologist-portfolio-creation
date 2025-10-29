@@ -89,6 +89,7 @@ const Index = () => {
       subtitle: '«Арт-терапия в психологической практике»',
       duration: '7 модулей (2-х дневные семинары)',
       price: '9 000',
+      oldPrice: '12 000',
       priceNote: '/ модуль',
       link: 'https://kuzikova.com/art_terapy',
       features: [
@@ -523,6 +524,11 @@ const Index = () => {
                   <CardDescription className="text-center text-sm">{price.duration}</CardDescription>
                   {'price' in price && (
                     <div className="text-center mt-4">
+                      {'oldPrice' in price && (
+                        <div className="mb-1">
+                          <span className="text-lg text-muted-foreground line-through">{price.oldPrice} ₽</span>
+                        </div>
+                      )}
                       <span className="text-4xl font-bold text-primary">{price.price}</span>
                       <span className="text-xl text-muted-foreground ml-1">₽</span>
                       {price.priceNote && <span className="text-sm text-muted-foreground ml-1">{price.priceNote}</span>}
