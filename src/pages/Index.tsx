@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import Icon from '@/components/ui/icon';
@@ -9,25 +9,7 @@ import { ContactForm } from '@/components/ContactForm';
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [visitorCount, setVisitorCount] = useState<number | null>(null);
   const [performanceDialogOpen, setPerformanceDialogOpen] = useState(false);
-
-  useEffect(() => {
-    const trackVisitor = async () => {
-      try {
-        const response = await fetch('https://functions.poehali.dev/b7f475c9-b32f-4c6f-8eb2-5f637cc10855', {
-          method: 'POST'
-        });
-        const data = await response.json();
-        if (data.visitors) {
-          setVisitorCount(data.visitors);
-        }
-      } catch (error) {
-        console.error('Failed to track visitor', error);
-      }
-    };
-    trackVisitor();
-  }, []);
 
   const menuItems = [
     { href: '#about', label: 'Обо мне' },
@@ -197,7 +179,6 @@ const Index = () => {
       <main className="flex-1">
         <HeroSection 
           services={services} 
-          visitorCount={visitorCount} 
         />
 
         <ServicesSection

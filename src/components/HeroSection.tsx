@@ -12,10 +12,9 @@ interface Service {
 
 interface HeroSectionProps {
   services: Service[];
-  visitorCount: number | null;
 }
 
-export const HeroSection = ({ services, visitorCount }: HeroSectionProps) => {
+export const HeroSection = ({ services }: HeroSectionProps) => {
   return (
     <>
       <section className="py-20 md:py-32 bg-gradient-to-b from-background to-secondary/30">
@@ -49,12 +48,7 @@ export const HeroSection = ({ services, visitorCount }: HeroSectionProps) => {
                 </a>
               </Button>
             </div>
-            {visitorCount && (
-              <div className="text-sm text-muted-foreground flex items-center gap-2 animate-fade-in">
-                <Icon name="Users" className="h-4 w-4" />
-                <span>Уже {visitorCount.toLocaleString()} человек посетили эту страницу</span>
-              </div>
-            )}
+
           </div>
         </div>
       </section>

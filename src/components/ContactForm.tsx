@@ -9,38 +9,13 @@ import Icon from '@/components/ui/icon';
 export const ContactForm = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '', preferredTime: '' });
   const [agreedToPolicy, setAgreedToPolicy] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitMessage('');
-
-    try {
-      const response = await fetch('https://functions.poehali.dev/df3e7860-6923-452c-9dd2-a39c6b60db65', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (response.ok && data.success) {
-        setSubmitMessage('✅ Спасибо! Ваша заявка отправлена. Я свяжусь с вами в ближайшее время.');
-        setFormData({ name: '', email: '', phone: '', message: '', preferredTime: '' });
-        setAgreedToPolicy(false);
-      } else {
-        setSubmitMessage('❌ Произошла ошибка. Попробуйте связаться со мной напрямую через Telegram.');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      setSubmitMessage('❌ Произошла ошибка. Попробуйте связаться со мной напрямую через Telegram.');
-    } finally {
-      setIsSubmitting(false);
-    }
+    setSubmitMessage('✅ Спасибо за заявку! Свяжитесь со мной напрямую через Telegram или WhatsApp для записи.');
+    setFormData({ name: '', email: '', phone: '', message: '', preferredTime: '' });
+    setAgreedToPolicy(false);
   };
 
   return (
@@ -117,9 +92,9 @@ export const ContactForm = () => {
                   type="submit"
                   className="w-full"
                   size="lg"
-                  disabled={isSubmitting || !agreedToPolicy}
+                  disabled={!agreedToPolicy}
                 >
-                  {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
+                  Отправить заявку
                 </Button>
                 {submitMessage && (
                   <div className={`text-sm p-3 rounded-md ${submitMessage.includes('✅') ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'}`}>
