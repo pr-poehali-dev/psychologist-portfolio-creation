@@ -40,6 +40,7 @@ interface FAQ {
 interface Article {
   title: string;
   date: string;
+  link: string;
 }
 
 interface ServicesSectionProps {
@@ -287,23 +288,25 @@ export const ServicesSection = ({
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {articles.map((article, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow group cursor-pointer">
-                <CardHeader>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                    <Icon name="Calendar" className="h-4 w-4" />
-                    <span>{article.date}</span>
-                  </div>
-                  <CardTitle className="group-hover:text-primary transition-colors">
-                    {article.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <Button variant="ghost" className="p-0 h-auto font-normal">
-                    Читать далее
-                    <Icon name="ArrowRight" className="ml-2 h-4 w-4" />
-                  </Button>
-                </CardContent>
-              </Card>
+              <Link key={index} to={article.link}>
+                <Card className="hover:shadow-lg transition-shadow group cursor-pointer h-full">
+                  <CardHeader>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                      <Icon name="Calendar" className="h-4 w-4" />
+                      <span>{article.date}</span>
+                    </div>
+                    <CardTitle className="group-hover:text-primary transition-colors">
+                      {article.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Button variant="ghost" className="p-0 h-auto font-normal">
+                      Читать далее
+                      <Icon name="ArrowRight" className="ml-2 h-4 w-4" />
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
